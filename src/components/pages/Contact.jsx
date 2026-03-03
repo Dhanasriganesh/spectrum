@@ -46,7 +46,7 @@ function Contact() {
                 Speak directly with our team for immediate assistance.
               </p>
               <p className="text-sm font-semibold text-blue-700 group-hover:text-blue-800">
-                +91 7416 107 565
+                +91 7416107565
               </p>
             </a>
 
