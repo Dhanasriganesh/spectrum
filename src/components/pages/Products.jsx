@@ -19,16 +19,16 @@ function Products() {
       color: "blue"
     },
     {
-      title: "Commercial Electrical",
-      icon: "🏢",
-      description: "Professional electrical services for offices, shops, and commercial buildings",
+      title: "Cable Tray Works",
+      icon: "📦",
+      description: "Design, supply, and installation of cable tray systems for clean, safe cable management",
       features: [
-        "Office electrical installations",
-        "Retail shop wiring",
-        "Commercial lighting systems",
-        "Power distribution systems",
-        "Emergency lighting",
-        "Data and communication wiring"
+        "GI, powder‑coated, and ladder‑type trays",
+        "Complete routing design and layout",
+        "Support fabrication and installation",
+        "Industrial and commercial cable management",
+        "Retrofit and expansion of existing trays",
+        "Earthing and bonding for tray systems"
       ],
       color: "yellow"
     },
@@ -117,16 +117,16 @@ function Products() {
       color: "pink"
     },
     {
-      title: "Safety Inspections",
-      icon: "🔍",
-      description: "Comprehensive electrical safety inspections and certifications",
+      title: "Instrumentation & Automation Works",
+      icon: "⚙️",
+      description: "End‑to‑end instrumentation and automation solutions for process plants and utilities",
       features: [
-        "Complete system inspections",
-        "Safety compliance checks",
-        "Risk assessments",
-        "Certification services",
-        "Detailed inspection reports",
-        "Recommendations for improvements"
+        "PLC / DCS panel wiring and commissioning",
+        "Field instruments installation and loop checking",
+        "Control cable laying and termination",
+        "SCADA, BMS and MCC integrations",
+        "Calibration and functional testing",
+        "Plant modifications and upgrades"
       ],
       color: "teal"
     }
