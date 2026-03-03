@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import servicesHero from '../../assets/services-home.jpg'
 
 function Products() {
   const services = [
@@ -148,28 +149,73 @@ function Products() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Image */}
-      <section className="relative bg-gradient-to-r from-blue-50 to-blue-100 py-12 sm:py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-            <div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gray-900">Our Services</h1>
-              <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-4 sm:mb-6">
-                Comprehensive electrical solutions for residential, commercial, and industrial needs
+      {/* Hero Section with fixed industrial background */}
+      <section className="relative min-h-[70vh] sm:min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Background image - fixed */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: `url(${servicesHero})` }}
+        />
+        {/* Dark gradient overlay for readability */}
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Subtle top/bottom fades */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+
+        <div className="relative z-10 w-full">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24">
+            <div className="max-w-3xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/60 bg-black/30 px-4 py-1.5 text-xs sm:text-sm font-semibold text-amber-100 mb-5 sm:mb-6 backdrop-blur-sm">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+                </span>
+                End‑to‑end electrical, instrumentation & automation services
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] font-bold leading-tight text-white mb-4 sm:mb-5">
+                <span className="block">What we are</span>
+                <span className="block bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
+                  Experts In
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-base md:text-lg text-slate-100/90 max-w-2xl mb-6 sm:mb-8">
+                From pharmaceutical lighting and cleanroom power to plant‑wide instrumentation and automation,
+                Spectrum Electricals delivers engineered solutions that keep your facilities safe, reliable, and audit‑ready.
               </p>
-              <Link to="/contact" className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 sm:px-8 py-3 rounded-lg font-bold text-base sm:text-lg hover:from-blue-600 hover:to-blue-700 transition-colors shadow-lg">
-                Get Free Quote
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <img 
-                src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&h=400&fit=crop" 
-                alt="Electrical Services" 
-                className="rounded-2xl shadow-xl w-full"
-                onError={(e) => {
-                  e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect fill='%23e5e7eb' width='600' height='400'/%3E%3Ctext fill='%236b7280' font-family='Arial' font-size='20' x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle'%3EElectrical Services%3C/text%3E%3C/svg%3E"
-                }}
-              />
+
+              <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+                {['Pharmaceutical lightings', 'Instrumentation & automation', 'Panel erection', 'Lighting solutions'].map((label) => (
+                  <span
+                    key={label}
+                    className="rounded-full border border-white/25 bg-black/30 px-4 py-1.5 text-xs sm:text-sm font-medium text-slate-100 backdrop-blur-sm"
+                  >
+                    {label}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-3.5 text-sm sm:text-base font-semibold text-slate-900 shadow-lg shadow-amber-500/30 transition hover:from-amber-400 hover:to-amber-500 hover:shadow-amber-500/40 hover:scale-[1.02]"
+                >
+                  View Solutions & Get Quote
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <a
+                  href="tel:+917416107565"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/40 bg-black/30 px-6 py-3.5 text-sm sm:text-base font-semibold text-white backdrop-blur-sm transition hover:bg-black/40 hover:border-white/70"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  Talk to an expert
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,21 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import bgImage from '../../assets/bg-spec.jpg'
-
+import about from "../../assets/spectrum-about.png"
+import nexus from "../../assets/spectrum-nexus.jpg"
+import turbo from "../../assets/spectrum-turbo.jpg"
+import pt from "../../assets/spectrum-pt.png"
 function Home() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Background Image */}
+      {/* Hero Section with fixed Background Image */}
       <section className="relative py-12 sm:py-16 md:py-24 lg:py-32 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Image (fixed) */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{
             backgroundImage: `url(${bgImage})`
           }}
         ></div>
         {/* Dark Overlay for Text Readability */}
-        <div className="absolute inset bg-opacity-50"></div>
+        <div className="absolute inset-0"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -24,7 +27,7 @@ function Home() {
                 Electrical & Instrumentation Solutions for Every Need
               </h1>
               <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-100">
-                Powering homes, buildings, and businesses with excellence and safety. Trusted by 100+ satisfied customers.
+                Powering homes, buildings, and businesses with excellence and safety. 100% Clients satisfaction.
               </p>
               
               {/* Modern Contact Section */}
@@ -76,7 +79,7 @@ function Home() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             <div className="text-center p-3 sm:p-4 hover:bg-blue-50 rounded-lg transition-colors">
-              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">500+</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-600 mb-1 sm:mb-2">100+</div>
               <div className="text-xs sm:text-sm md:text-base text-gray-600">Projects Completed</div>
             </div>
             <div className="text-center p-3 sm:p-4 hover:bg-blue-50 rounded-lg transition-colors">
@@ -101,7 +104,7 @@ function Home() {
           <div className="grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div className="order-2 md:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop" 
+                src={about}
                 alt="Electrical Work" 
                 className="rounded-2xl shadow-xl w-full"
                 onError={(e) => {
@@ -158,158 +161,233 @@ function Home() {
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-              Our Electrical Services
-            </h2>
+            <div className="text-6xl sm:text-3xl md:text-4xl font-bold  text-gray-900 mb-3 sm:mb-4">
+              We are experts in
+            </div>
             <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto px-4">
               Comprehensive electrical solutions for residential, commercial, and industrial needs
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 md:gap-8">
-            {/* Service Card 1 */}
-            <div className="bg-gradient-to-br from-blue-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-blue-100">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
+            {/* Service Card 1 – Pharmaceutical Lightings (highlighted) */}
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="absolute inset-x-6 -top-4 flex justify-start">
+                <span className="inline-flex items-center gap-1 rounded-full bg-amber-400 text-slate-900 px-3 py-1 text-xs font-semibold shadow-md shadow-amber-300/70">
+                  <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
+                  Core Expertise
+                </span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Residential Wiring</h3>
-              <p className="text-gray-600 mb-4">
-                Complete electrical wiring for homes, apartments, and villas. New installations, rewiring, and upgrades.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> New home wiring
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Rewiring services
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Circuit upgrades
-                </li>
-              </ul>
+              <div className="flex items-start gap-4 pt-2">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-amber-400 via-yellow-300 to-blue-400 opacity-60 blur-md group-hover:opacity-90 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-slate-900 text-amber-300 shadow-lg shadow-amber-300/40">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v4m0 10v4m6-10h4M2 11h4m11.657-5.657l2.828-2.828M3.515 20.485l2.828-2.828m0-11.314L3.515 3.515M20.485 20.485l-2.828-2.828M9 13a3 3 0 116 0 3 3 0 01-6 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-extrabold mb-2 bg-gradient-to-r from-amber-200 via-yellow-200 to-blue-200 bg-clip-text text-transparent">
+                    Pharmaceutical Lightings
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    Specialized cleanroom and pharmaceutical lighting solutions designed for GMP, sterile areas,
+                    and audit-ready environments.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                  <li className="flex items-center">
+                      <span className="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] text-slate-900 font-bold">
+                        ✓
+                      </span>
+                      Sales & Services
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] text-slate-900 font-bold">
+                        ✓
+                      </span>
+                      Cleanroom & sterile area lighting
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] text-slate-900 font-bold">
+                        ✓
+                      </span>
+                      Well glass fittings, flood lights, etc.
+                    </li>
+                    <li className="flex items-center">
+                      <span className="mr-2 flex h-4 w-4 items-center justify-center rounded-full bg-amber-400 text-[10px] text-slate-900 font-bold">
+                        ✓
+                      </span>
+                      Validated designs for pharma audits
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
-            {/* Service Card 2 */}
-            <div className="bg-gradient-to-br from-amber-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-amber-100">
-              <div className="bg-gradient-to-br from-amber-400 to-amber-500 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+            {/* Service Card 2 – Instrumentation & Automation */}
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-300/70 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-4 right-[-40px] w-32 bg-gradient-to-l from-amber-300/40 to-transparent rotate-[-18deg]" />
+              <div className="absolute top-4 right-4 inline-flex items-center gap-1 rounded-full bg-amber-500/90 px-3 py-1 text-[11px] font-semibold text-slate-900 shadow-md shadow-amber-400/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-slate-900" />
+                Instrumentation Focus
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Commercial Electrical</h3>
-              <p className="text-gray-600 mb-4">
-                Professional electrical solutions for offices, shops, and commercial buildings of all sizes.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Office installations
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Lighting systems
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Power distribution
-                </li>
-              </ul>
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-amber-400 to-orange-400 opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-400 to-amber-500 text-white shadow-lg">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4h9l9 4v8l-9 4-9-4V4z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 12h3m4 0h3M7 9h1m8 6h1" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">
+                    Instrumentation &amp; Automation
+                  </h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    Precision instrumentation, control systems, and automation for reliable, intelligent plant operations.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> PLC / DCS panels & control wiring
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Field instruments, sensors & loop checks
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> SCADA / BMS integration & commissioning
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
 
             {/* Service Card 3 */}
-            <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-purple-100">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-purple-500 to-indigo-500 opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 text-white shadow-lg">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Panel Erection</h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    Expert electrical panel erection, upgrades, and maintenance for safe power distribution.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Panel upgrades
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Circuit breakers
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Safety inspections
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Panel Installation</h3>
-              <p className="text-gray-600 mb-4">
-                Expert electrical panel installation, upgrades, and maintenance for safe power distribution.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Panel upgrades
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Circuit breakers
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Safety inspections
-                </li>
-              </ul>
             </div>
 
             {/* Service Card 4 */}
-            <div className="bg-gradient-to-br from-green-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-green-100">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-green-500 to-emerald-500 opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-500 to-green-600 text-white shadow-lg">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Lighting Solutions</h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    Modern lighting installations including LED, outdoor, indoor, and decorative lighting systems.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> LED installations
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Outdoor lighting
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Decorative lights
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Lighting Solutions</h3>
-              <p className="text-gray-600 mb-4">
-                Modern lighting installations including LED, outdoor, indoor, and decorative lighting systems.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> LED installations
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Outdoor lighting
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Decorative lights
-                </li>
-              </ul>
             </div>
 
             {/* Service Card 5 */}
-            <div className="bg-gradient-to-br from-red-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-red-100">
-              <div className="bg-gradient-to-br from-red-500 to-red-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-red-500 to-rose-500 opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-500 to-red-600 text-white shadow-lg">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Emergency Services</h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    24/7 emergency electrical services for urgent repairs, power outages, and safety issues.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Machine breakdown
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> H.V breakdown
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> L.V breakdown
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Emergency Services</h3>
-              <p className="text-gray-600 mb-4">
-                24/7 emergency electrical services for urgent repairs, power outages, and safety issues.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> 24/7 availability
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Rapid response
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Safety priority
-                </li>
-              </ul>
             </div>
 
             {/* Service Card 6 */}
-            <div className="bg-gradient-to-br from-indigo-50 to-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border border-indigo-100">
-              <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 shadow-md">
-                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            <div className="group relative overflow-hidden rounded-2xl border border-blue-200/70 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 sm:p-7 md:p-8 shadow-lg shadow-blue-200/40 hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-200">
+              <div className="flex items-start gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-tr from-indigo-500 to-sky-500 opacity-40 blur-md group-hover:opacity-70 transition-opacity" />
+                  <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 text-white shadow-lg">
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Maintenance & Repair</h3>
+                  <p className="text-sm sm:text-base text-slate-200/90 mb-3">
+                    Regular maintenance and prompt repair services to keep your electrical systems running smoothly.
+                  </p>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-100/90">
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Preventive maintenance
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> VFD programming
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-green-500 mr-2">✓</span> Star & Delta Feeders
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Maintenance & Repair</h3>
-              <p className="text-gray-600 mb-4">
-                Regular maintenance and prompt repair services to keep your electrical systems running smoothly.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Preventive maintenance
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Fault diagnosis
-                </li>
-                <li className="flex items-center">
-                  <span className="text-green-500 mr-2">✓</span> Quick repairs
-                </li>
-              </ul>
             </div>
           </div>
 
@@ -406,20 +484,24 @@ function Home() {
                 <div className="text-amber-400 text-xl">
                   ★★★★★
                 </div>
+                
               </div>
+              <img src={nexus} alt="Nexus Automation" className="w-92 h-80 rounded-3xl" />
               <p className="text-gray-700 mb-6 italic">
-                "Excellent service! They completed the wiring for our new villa on time and within budget. 
+                "Excellent service! They completed the erection for Reactor automation system for our projects successfully on time and within budget. 
                 Very professional and knowledgeable team."
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-3 text-white font-bold text-lg">
-                  RK
+                  NA
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Rajesh Kumar</div>
-                  <div className="text-sm text-gray-500">Villa Owner</div>
+                  <div className="font-bold text-gray-900">Nexus Automation</div>
+                  <div className="text-sm text-gray-500">Automation Solutions</div>
                 </div>
+               
               </div>
+              
             </div>
 
             <div className="bg-gradient-to-br from-purple-50 to-white p-8 rounded-xl shadow-lg border border-purple-100">
@@ -428,17 +510,18 @@ function Home() {
                   ★★★★★
                 </div>
               </div>
+              <img src={turbo} alt="Turbo Tech" className="w-92 h-80 rounded-3xl" />
               <p className="text-gray-700 mb-6 italic">
-                "Quick response for our emergency electrical issue. The technician was skilled and fixed 
-                the problem efficiently. Highly recommended!"
+                "Great Team! They completed the lighting installation for our industrial plant on time and within budget. 
+                The team was professional, ensuring the installation was done correctly and efficiently. Highly recommended!"
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-3 text-white font-bold text-lg">
-                  PS
+                  TT
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Priya Sharma</div>
-                  <div className="text-sm text-gray-500">Homeowner</div>
+                  <div className="font-bold text-gray-900">TurboTech</div>
+                  <div className="text-sm text-gray-500">Industrial Lighting</div>
                 </div>
               </div>
             </div>
@@ -449,17 +532,18 @@ function Home() {
                   ★★★★★
                 </div>
               </div>
+              <img src={pt} alt="pharmaceutical" className="w-92 h-80 rounded-3xl" />
               <p className="text-gray-700 mb-6 italic">
-                "We've used Spectrum Electricals for all our commercial projects. Reliable, professional, 
-                and always delivers quality work."
+                 
+               Best team for pharmaceutical lightings. They serviced our old lights in very reasonable cost and with best quality.
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-3 text-white font-bold text-lg">
                   AM
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Anand Mehta</div>
-                  <div className="text-sm text-gray-500">Business Owner</div>
+                  <div className="font-bold text-gray-900">Zenfold</div>
+                  <div className="text-sm text-gray-500">Pharmaceutical Lightings</div>
                 </div>
               </div>
             </div>
